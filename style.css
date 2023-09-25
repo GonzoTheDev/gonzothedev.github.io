@@ -25,17 +25,17 @@
     border: 0 solid #27AE60;
     
  /* Do not forget the behaviour known as margin collapsing. When two elements have two different margins, they will be separated by the highest one.  */
-    margin: 0em;
+    margin: 0.5em;
 
 }
 
 .box-three {
   
     padding: 0.1em;
-    background-color: #2D9CDB;
+    background-color: #2ddb3b;
     border: 0 solid #27AE60;
     
  /* Do not forget the behaviour known as margin collapsing. When two elements have two different margins, they will be separated by the highest one.  */
-    margin: 0em;
+    margin: 0.5em;
 
 }
