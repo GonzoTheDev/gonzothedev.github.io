@@ -3,6 +3,6 @@ function myBtn() {
     document.getElementById('inc').value = ++i;
 }
 function myAlert() {
-    msg = document.getElementById('msg').value
+    var msg = document.getElementById('msg').value
     alert(msg) 
 }
