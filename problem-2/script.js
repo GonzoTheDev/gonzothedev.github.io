@@ -3,7 +3,10 @@ let selectedColor = '#ffcccb';
 function changeColor(color, elementId) {
     selectedColor = color;
     const prevColorOption = document.getElementsByClassName('selected-color')[0];
-    prevColorOption.className = 'color-option';
+    if (typeof(prevColorOption) != 'undefined' && prevColorOption != null)
+    {
+        prevColorOption.className = 'color-option';
+    }
     const colorOption = document.getElementById(elementId);
     colorOption.className = 'selected-color'
 }
