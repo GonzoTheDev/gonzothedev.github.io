@@ -51,8 +51,6 @@ body {
 }
 
 .editable {
-    border: 1px solid #ddd;
-    border-radius: 5px;
     padding: 5px;
     box-sizing: border-box;
     margin-bottom: 10px;
