@@ -30,6 +30,10 @@ body {
     cursor: pointer;
 }
 
+.selected-color {
+    border: 2px solid #000;
+}
+
 #add-note-btn {
     width: 200px;
     padding: 10px;

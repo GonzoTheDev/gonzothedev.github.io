@@ -1,7 +1,9 @@
 let selectedColor = '#ffcccb';
 
-function changeColor(color) {
+function changeColor(color, elementId) {
     selectedColor = color;
+    const colorOption = document.getElementById(elementId);
+    colorOption.className = 'selected-color'
 }
 
 function addNote() {
