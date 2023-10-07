@@ -28,15 +28,17 @@ function addNote() {
     };
 
     const editBtn = document.createElement('button');
-    editBtn.innerText = 'Edit';
+    editBtn.innerText = 'Save';
     editBtn.onclick = function () {
         const isEditable = textArea.readOnly;
         textArea.readOnly = !isEditable;
 
         if (!isEditable) {
             textAreaContainer.removeChild(textArea);
+            editBtn.innerText = 'Edit';
         } else {
             textAreaContainer.appendChild(textArea);
+            editBtn.innerText = 'Save';
         }
     };
 
