@@ -18,6 +18,10 @@ function addNote() {
     textArea.placeholder = 'Enter your note...';
     textAreaContainer.appendChild(textArea);
 
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'note-content';
+    contentDiv.innerText = textArea.value;
+
     const buttonsContainer = document.createElement('div');
     buttonsContainer.className = 'note-buttons';
 
@@ -36,9 +40,11 @@ function addNote() {
         if (!isEditable) {
             textAreaContainer.removeChild(textArea);
             editBtn.innerText = 'Edit';
+            contentDiv.innerText = textArea.value;
         } else {
             textAreaContainer.appendChild(textArea);
             editBtn.innerText = 'Save';
+            contentDiv.innerText = '';
         }
     };
 

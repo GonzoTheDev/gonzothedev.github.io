@@ -55,3 +55,7 @@ body {
     border: none;
     resize: none;
 }
+
+.note-content {
+    display: block;
+}
