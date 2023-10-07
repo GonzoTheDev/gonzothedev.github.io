@@ -15,6 +15,10 @@ body {
     border: 1px solid black;
 }
 
+.sub-grid {
+    border: 1px solid black;
+}
+
 @media (max-width: 960px) {
     .parent-grid {
         grid-template-columns: repeat(2, 50%);
