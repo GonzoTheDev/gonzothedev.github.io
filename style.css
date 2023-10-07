@@ -10,7 +10,8 @@ h1 {
     font-weight: 400;
     font-size: 2em;
     color: #333333;
-    margin: 0.5em;
+    margin: auto;
+    width: 50%;
 }
 
 h2 {
