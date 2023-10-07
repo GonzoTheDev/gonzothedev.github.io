@@ -31,8 +31,11 @@ body {
 }
 
 .selected-color {
-    border: 2px solid #000;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 #add-note-btn {
