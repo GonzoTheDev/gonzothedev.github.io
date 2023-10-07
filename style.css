@@ -5,6 +5,11 @@
     margin: 0;
 }
 
+.myBtn {
+    padding: 0;
+    margin: 0;
+}
+
 h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;

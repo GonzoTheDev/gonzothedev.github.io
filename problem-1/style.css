@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.parent-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    border: 1px solid black;
+}
+
+.child-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid black;
+}
+
+@media (max-width: 960px) {
+    .parent-grid {
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media (max-width: 640px) {
+    .parent-grid {
+        grid-template-columns: 100%;
+    }
+
+    .child-grid {
+        grid-template-columns: 1fr;
+    }
+}
