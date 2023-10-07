@@ -11,6 +11,13 @@ function addNote() {
     note.className = 'note';
     note.style.backgroundColor = selectedColor;
 
+    const textArea = document.createElement('textarea');
+    textArea.placeholder = 'Enter your note...';
+    note.appendChild(textArea);
+
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'note-buttons';
+
     const deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
     deleteBtn.onclick = function () {
@@ -20,14 +27,13 @@ function addNote() {
     const editBtn = document.createElement('button');
     editBtn.innerText = 'Edit';
     editBtn.onclick = function () {
-        const newText = prompt('Edit the note:', note.innerText);
-        if (newText !== null) {
-            note.innerText = newText;
-        }
+        textArea.readOnly = !textArea.readOnly;
     };
 
-    note.appendChild(deleteBtn);
-    note.appendChild(editBtn);
+    buttonsContainer.appendChild(deleteBtn);
+    buttonsContainer.appendChild(editBtn);
+
+    note.appendChild(buttonsContainer);
 
     notesContainer.appendChild(note);
 }

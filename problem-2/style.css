@@ -36,3 +36,8 @@ body {
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
+.note-buttons {
+    display: flex;
+    justify-content: space-between;
+}
