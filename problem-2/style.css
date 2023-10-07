@@ -29,3 +29,10 @@ body {
     border-radius: 50%;
     cursor: pointer;
 }
+
+#add-note-btn {
+    width: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
