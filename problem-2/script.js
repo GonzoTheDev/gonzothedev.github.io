@@ -52,6 +52,7 @@ function addNote() {
     buttonsContainer.appendChild(editBtn);
 
     note.appendChild(textAreaContainer);
+    note.appendChild(contentDiv);
     note.appendChild(buttonsContainer);
 
     notesContainer.appendChild(note);
