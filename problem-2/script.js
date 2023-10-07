@@ -1,5 +1,7 @@
 // Set the default colour to be pastel red
 let selectedColor = '#ffcccb';
+const defaultOption = document.getElementById('color1');
+defaultOption.className = 'selected-color';
 
 // Function to detect and handle requests to change the colour of notes
 function changeColor(color, elementId) {
