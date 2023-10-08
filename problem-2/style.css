@@ -1,9 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
     column-count: 6; 
     column-gap: 20px; 
     column-width: 200px;
