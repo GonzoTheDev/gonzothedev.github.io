@@ -1,10 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    column-count: 2; /* Set the initial column count */
-    column-gap: 20px; /* Adjust the gap between columns */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 20px;
-    max-height: 100vh; /* Set a maximum height */
-    overflow-y: auto; /* Enable vertical scrollbar when necessary */
+    column-count: auto; 
+    column-gap: 20px; 
+    max-height: 100vh; 
+    overflow-y: auto; 
+        
 }
 
 .note {
