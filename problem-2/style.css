@@ -4,7 +4,7 @@ body {
     flex-wrap: wrap;
     gap: 10px;
     padding: 20px;
-    column-count: auto; 
+    column-count: 6; 
     column-gap: 20px; 
     column-width: 200px;
     max-height: 100vh; 
