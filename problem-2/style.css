@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    column-count: 6; 
-    column-gap: 20px; 
+    column-count: 8; 
+    column-gap: 10px; 
     column-width: 200px;
     max-height: 100vh; 
     overflow-y: auto; 
