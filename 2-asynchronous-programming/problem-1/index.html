@@ -21,7 +21,7 @@
       cursor: pointer;
     }
 
-    .error {
+    #noResult {
       color: red;
       display: none;
     }
@@ -42,7 +42,8 @@
     <button type="button" id="addContactBtn">Add Contact</button>
   </form>
 
-  <div id="error"></div>
+  <div id="error" style="color: red;"></div>
+  <div id="noResult">No matching result</div>
 
   <table id="contactsTable">
     <thead>
