@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phone Directory</title>
   <style>
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    h3 {
+      text-align: center;
+      margin-top: 50px;
+    }
     table {
+      margin: auto;
       border-collapse: collapse;
-      width: 100%;
+      width: 50%;
     }
 
     th, td {
@@ -30,7 +39,7 @@
     #error {
       margin: 15px;
     }
-    
+
     #contactForm {
       margin: auto;
       margin-top: 50px;
@@ -45,6 +54,8 @@
   </style>
 </head>
 <body>
+
+  <h1> Phone Directory</h1>
 
   <form id="contactForm">
     <label for="name">Name:</label>
@@ -62,6 +73,7 @@
   <div id="error" style="color: red;"></div>
   <div id="noResult">No matching result</div>
 
+  <h3>Contacts Summary</h3>
   <table id="contactsTable">
     <thead>
       <tr>
