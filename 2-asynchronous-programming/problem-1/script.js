@@ -61,11 +61,17 @@ var contacts = [];
       });
     }
 
+    var sortOrder = 1; // 1 for ascending, -1 for descending
+
     function sortTable(columnIndex) {
+      sortOrder = -sortOrder; // Toggle the sort order
+
       contacts.sort(function (a, b) {
         var x = a[Object.keys(a)[columnIndex]].toLowerCase();
         var y = b[Object.keys(b)[columnIndex]].toLowerCase();
-        return x.localeCompare(y);
+
+        // Use sortOrder to determine the order of sorting
+        return sortOrder * x.localeCompare(y);
       });
 
       renderTable();
