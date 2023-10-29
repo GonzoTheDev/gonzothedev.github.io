@@ -1,0 +1,54 @@
+h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  h3 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 50%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+
+  #noResult {
+    color: red;
+    display: none;
+    margin: 15px;
+    text-align: center;
+  }
+
+  #error {
+    margin: 15px;
+    text-align: center;
+  }
+
+  #contactForm {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 50px;
+    width: 790px;
+    background-color: #a9d5e0;
+    border: 3px solid #467888;
+    border-radius: 10px;
+  }
+
+  #searchbox {
+    margin: auto;
+    margin-bottom: 50px;
+    width: 50%;
+    text-align: center;
+  }
