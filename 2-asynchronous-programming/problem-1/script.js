@@ -71,7 +71,7 @@ var contacts = [];
       renderTable();
     }
 
-    document.getElementById('mobile').addEventListener('input', function () {
+    document.getElementById('search').addEventListener('input', function () {
       var searchValue = this.value.trim().toLowerCase();
       var table = document.getElementById('contactsTable');
       var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
