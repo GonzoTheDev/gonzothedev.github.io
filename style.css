@@ -128,3 +128,14 @@ h2 {
     text-decoration: none;
     cursor: pointer;
   }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+
+  .grid-item {
+    padding: 20px;
+    text-align: center;
+  }
