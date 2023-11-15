@@ -80,6 +80,17 @@ h2 {
 
 }
 
+.box-six {
+  
+    padding: 0.1em;
+    background-color: #612ddb;
+    border: 0 solid #27AE60;
+    
+ /* Do not forget the behaviour known as margin collapsing. When two elements have two different margins, they will be separated by the highest one.  */
+    margin: 0.5em;
+
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
