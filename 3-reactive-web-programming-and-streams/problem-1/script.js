@@ -92,27 +92,39 @@ function addNote() {
     buttonsContainer.className = 'note-buttons';
 
      // Functionality to delete the note
-     const deleteBtnClick$ = fromEvent(deleteBtn, 'click');
-     deleteBtnClick$.subscribe(() => {
-         notesContainer.removeChild(note);
-     });
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = 'Delete';
 
-     // Functionality to save and edit the note
-     const editBtnClick$ = fromEvent(editBtn, 'click');
-     editBtnClick$.subscribe(() => {
-         const isEditable = textArea.readOnly;
-         textArea.readOnly = !isEditable;
+    // Subscribe to delete button clicks
+    const deleteBtnClick$ = fromEvent(deleteBtn, 'click');
+    deleteBtnClick$.subscribe(() => {
+        notesContainer.removeChild(note);
+    });
 
-         if (!isEditable) {
-             textAreaContainer.removeChild(textArea);
-             editBtn.innerText = 'Edit';
-             contentDiv.innerText = textArea.value;
-         } else {
-             textAreaContainer.appendChild(textArea);
-             editBtn.innerText = 'Save';
-             contentDiv.innerText = '';
-         }
-     });
+    // Functionality to save and edit the note
+    const editBtn = document.createElement('button');
+    editBtn.innerText = 'Save';
+
+    // Subscribe to edit button clicks
+    const editBtnClick$ = fromEvent(editBtn, 'click');
+    editBtnClick$.subscribe(() => {
+        const isEditable = textArea.readOnly;
+        textArea.readOnly = !isEditable;
+
+        if (!isEditable) {
+            textAreaContainer.removeChild(textArea);
+            editBtn.innerText = 'Edit';
+            contentDiv.innerText = textArea.value;
+        } else {
+            textAreaContainer.appendChild(textArea);
+            editBtn.innerText = 'Save';
+            contentDiv.innerText = '';
+        }
+    });
+
+    // Append the buttons to the buttons container
+    buttonsContainer.appendChild(deleteBtn);
+    buttonsContainer.appendChild(editBtn);
 
 
     // Append the buttons to the buttons container
