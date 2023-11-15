@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    column-count: 8; 
+    column-gap: 10px; 
+    column-width: 200px;
+    max-height: 100vh; 
+    overflow-y: auto; 
+        
+}
+
+.note {
+    width: 200px;
+    min-height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    break-inside: avoid-column;
+}
+
+.color-selector {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.color-option {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.selected-color {
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#add-note-btn {
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.note-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editable {
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.editable textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+}
+
+.note-content {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
