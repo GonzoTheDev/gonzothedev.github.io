@@ -1,20 +1,36 @@
-import { fromEvent } from 'rxjs';
+const { fromEvent } = rxjs;
 
 // Set the default colour to be pastel red
 let selectedColor = '#ffcccb';
-const defaultOption = document.getElementById('color1');
-defaultOption.className = 'selected-color';
+
+const colorOptions = document.querySelectorAll('.color-option');
+const addNoteBtn = document.getElementById('add-note-btn');
+
+// Observable for color option clicks
+const colorOptionClick$ = fromEvent(colorOptions, 'click');
+
+// Observable for add note button clicks
+const addNoteBtnClick$ = fromEvent(addNoteBtn, 'click');
+
+// Subscribe to color option clicks
+colorOptionClick$.subscribe((event) => {
+    const color = event.target.style.backgroundColor;
+    changeColor(color, event.target.id);
+});
+
+// Subscribe to add note button clicks
+addNoteBtnClick$.subscribe(() => {
+    addNote();
+});
 
 // Function to detect and handle requests to change the colour of notes
 function changeColor(color, elementId) {
     selectedColor = color;
-    const prevColorOption = document.getElementsByClassName('selected-color')[0];
-    if (typeof(prevColorOption) != 'undefined' && prevColorOption != null)
-    {
-        prevColorOption.className = 'color-option';
-    }
+    colorOptions.forEach((option) => {
+        option.classList.remove('selected-color');
+    });
     const colorOption = document.getElementById(elementId);
-    colorOption.className = 'selected-color'
+    colorOption.classList.add('selected-color');
 }
 
 // Function to add a new note to the page
