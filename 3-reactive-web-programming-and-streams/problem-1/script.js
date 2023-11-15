@@ -17,6 +17,10 @@ const deleteBtn = document.createElement('button');
 deleteBtn.className = 'delete-btn';
 deleteBtn.innerText = 'Delete';
 
+// Observable for edit button clicks
+const editBtn = document.createElement('button');
+editBtn.innerText = 'Save';
+
 // Subscribe to color option clicks
 colorOptionClick$.subscribe((event) => {
     const color = event.target.style.backgroundColor;
@@ -32,6 +36,23 @@ addNoteBtnClick$.subscribe(() => {
 const deleteBtnClick$ = fromEvent(deleteBtn, 'click');
 deleteBtnClick$.subscribe(() => {
     notesContainer.removeChild(note);
+});
+
+// Subscribe to edit button clicks
+const editBtnClick$ = fromEvent(editBtn, 'click');
+editBtnClick$.subscribe(() => {
+    const isEditable = textArea.readOnly;
+    textArea.readOnly = !isEditable;
+
+    if (!isEditable) {
+        textAreaContainer.removeChild(textArea);
+        editBtn.innerText = 'Edit';
+        contentDiv.innerText = textArea.value;
+    } else {
+        textAreaContainer.appendChild(textArea);
+        editBtn.innerText = 'Save';
+        contentDiv.innerText = '';
+    }
 });
 
 // Function to detect and handle requests to change the colour of notes
