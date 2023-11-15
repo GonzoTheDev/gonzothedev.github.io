@@ -72,7 +72,7 @@ h2 {
 .box-five {
   
     padding: 0.1em;
-    background-color: #FAFA33;
+    background-color: #33faba;
     border: 0 solid #27AE60;
     
  /* Do not forget the behaviour known as margin collapsing. When two elements have two different margins, they will be separated by the highest one.  */
@@ -138,4 +138,10 @@ h2 {
   .grid-item {
     padding: 20px;
     text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
+.grid-shadow {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
