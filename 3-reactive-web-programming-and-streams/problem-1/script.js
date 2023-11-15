@@ -12,6 +12,11 @@ const colorOptionClick$ = fromEvent(colorOptions, 'click');
 // Observable for add note button clicks
 const addNoteBtnClick$ = fromEvent(addNoteBtn, 'click');
 
+// Observable for delete button clicks
+const deleteBtn = document.createElement('button');
+deleteBtn.className = 'delete-btn';
+deleteBtn.innerText = 'Delete';
+
 // Subscribe to color option clicks
 colorOptionClick$.subscribe((event) => {
     const color = event.target.style.backgroundColor;
@@ -21,6 +26,12 @@ colorOptionClick$.subscribe((event) => {
 // Subscribe to add note button clicks
 addNoteBtnClick$.subscribe(() => {
     addNote();
+});
+
+// Subscribe to delete button clicks
+const deleteBtnClick$ = fromEvent(deleteBtn, 'click');
+deleteBtnClick$.subscribe(() => {
+    notesContainer.removeChild(note);
 });
 
 // Function to detect and handle requests to change the colour of notes
