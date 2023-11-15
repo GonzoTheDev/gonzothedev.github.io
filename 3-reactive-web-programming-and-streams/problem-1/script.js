@@ -1,3 +1,5 @@
+import { fromEvent } from 'rxjs';
+
 // Set the default colour to be pastel red
 let selectedColor = '#ffcccb';
 const defaultOption = document.getElementById('color1');
