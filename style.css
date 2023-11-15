@@ -29,7 +29,7 @@ h2 {
 
 .box-one {    
 /* I can add a padding to the content, adding background to the element (and, consequently, more space around it) */
-    padding: 0em;
+    padding: 0.1em;
     background-color: #EB5757;
     
 /* the border goes around the padding */
