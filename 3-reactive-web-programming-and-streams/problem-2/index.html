@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+
+  <!-- Import RxJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.1/rxjs.umd.min.js" integrity="sha512-D9LDs8YUUVa4V9Gl4Zb+xqRAc7RCzooR3+zzebgK2RMu/KU+dh90pbjEEMzPiSyRSGbSp9j1pZnrO4joGa5WEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <style>
+    #timer {
+      font-size: 24px;
+      text-align: center;
+      margin: 50px;
+    }
+    /* font */
+/* {{{ */
+/*
+body,html,input,a
+{
+  font-family: Helvetica, Arial;
+}
+button
+{
+  font-family: arial,sans-serif;
+}
+*/
+.container {
+    margin: auto;
+    width: 50%;
+    padding-top: 5vh;
+}
+
+#timer_table * {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+/* }}} */
+
+/* colors */
+/* {{{ */
+#timer_table input,
+#timer_table button {
+  background: rgba(255, 255, 255, 0.7);
+  width: 5%;
+}
+#timer_table input.s {
+  color: #aaa;
+}
+/* button & input colors */
+#timer_table button,
+#timer_table input {
+  color: #666;
+}
+#timer_table button:hover,
+#timer_table button:focus,
+#timer_table input:hover,
+#timer_table input:focus {
+  background: rgba(255, 255, 255, 0.95);
+}
+/*split in two to get rid of following bug: scroll broken in the youtube url input when cursor moves out of visible area*/
+#timer_table button:hover,
+#timer_table button:focus,
+#timer_table #inputs input:hover,
+#timer_table #inputs input:focus {
+  color: #333;
+}
+/*
+button:after,
+a,
+#notiPermission,
+#install
+{
+  color: #33b;
+}
+*/
+
+/* selection styling only works in firefox for now */
+#timer_table input::selection {
+  background-color: rgba(48, 48, 178, 0.25); /* #33b ~= rgb(48,48,178) */
+}
+#timer_table input::-webkit-selection {
+  background-color: rgba(48, 48, 178, 0.25);
+}
+#timer_table input::-moz-selection /*firefox wants this selector to be alone*/ {
+  background-color: rgba(48, 48, 178, 0.25);
+}
+/* }}} */
+
+/* details (cursor+selectable+button+..) */
+/* {{{ */
+#timer_table button,
+#timer_table input {
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+}
+/* Remove button outline in Firefox, https://stackoverflow.com/questions/71074/how-to-remove-firefoxs-dotted-outline-on-buttons-as-well-as-links */
+button::-moz-focus-inner {
+  border: 0;
+}
+#timer_table button {
+  /* font-size: 12px; */
+  /* font-size: 4vw; */
+  font-weight: bold;
+  font-size: 13px;
+  max-width: 95%;
+  letter-spacing: 1px;
+  white-space: pre;
+}
+
+#timer_table #inputs input {
+  font-size: 100%;
+  padding: 0;
+  border: 0;
+}
+#timer_table .inputSep.s,
+#timer_table #inputs input.s {
+  font-size: 70%;
+  position: relative;
+  bottom: -2px;
+}
+#counter {
+  line-height: 0.8em;
+}
+/* }}} */
+
+#time {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div id="timer_table">
+
+        <input type="number" id="hours" min="0" value="0">
+        <input class="inputSep s" type="text" value=":" readonly="readonly">
+        <input type="number" id="minutes" min="0" max="59" value="0">
+        <input class="inputSep s" type="text" value=":" readonly="readonly">
+        <input type="number" id="seconds" min="0" max="59" value="0">
+        
+        <button onclick="startCountdown()">Start Countdown</button>
+        </div>
+    </div>
+    <div id="timer">Enter a time and start the countdown.</div>
+    <script>
+        const { timer, interval } = rxjs;
+        const { map, take } = rxjs.operators;
+      
+        let countdownSeconds = 0;
+      
+        const timerElement = document.getElementById('timer');
+        const hoursInput = document.getElementById('hours');
+        const minutesInput = document.getElementById('minutes');
+        const secondsInput = document.getElementById('seconds');
+      
+        function startCountdown() {
+          const hours = parseInt(hoursInput.value) || 0;
+          const minutes = parseInt(minutesInput.value) || 0;
+          const seconds = parseInt(secondsInput.value) || 0;
+          countdownSeconds = hours * 3600 + minutes * 60 + seconds;
+      
+          timer(0, 1000).pipe(
+            take(countdownSeconds + 1),
+            map(time => countdownSeconds - time)
+          ).subscribe(time => {
+            const hours = Math.floor(time / 3600);
+            const minutes = Math.floor((time % 3600) / 60);
+            const seconds = time % 60;
+            timerElement.innerHTML = `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+          });
+        }
+      </script>
+    
+    
+    </body>
+    </html>
