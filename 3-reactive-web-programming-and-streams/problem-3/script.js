@@ -1,4 +1,4 @@
-const { fromEvent, Subject } = rxjs;
+const { fromEvent } = rxjs;
 
 class Note {
     constructor(color, parent = null) {
@@ -69,7 +69,7 @@ class Note {
             notesContainer.appendChild(this.element);
         } else {
             parent.children.push(this);
-            parent.element.appendChild(this.element);
+            notesContainer.appendChild(this.element); // Append to notesContainer instead of parent's DOM element
         }
     }
 
@@ -81,6 +81,9 @@ class Note {
 
         // Remove the note from the DOM
         this.element.parentNode.removeChild(this.element);
+
+        // Recursively delete child notes
+        this.children.forEach(child => child.deleteNote());
     }
 
     addChildNote() {
