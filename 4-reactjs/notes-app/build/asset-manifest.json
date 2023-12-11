@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/css/main.534618d2.css",
+    "main.js": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/main.5217b52a.js",
+    "static/js/787.ade4cc30.chunk.js": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/787.ade4cc30.chunk.js",
+    "index.html": "/gonzothedev.github.io/4-reactjs/notes-app/build/index.html",
+    "main.534618d2.css.map": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/css/main.534618d2.css.map",
+    "main.5217b52a.js.map": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/main.5217b52a.js.map",
+    "787.ade4cc30.chunk.js.map": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/787.ade4cc30.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.534618d2.css",
+    "static/js/main.5217b52a.js"
+  ]
+}
