@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/css/main.534618d2.css",
-    "main.js": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/main.5217b52a.js",
-    "static/js/787.ade4cc30.chunk.js": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/787.ade4cc30.chunk.js",
-    "index.html": "/gonzothedev.github.io/4-reactjs/notes-app/build/index.html",
-    "main.534618d2.css.map": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/css/main.534618d2.css.map",
-    "main.5217b52a.js.map": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/main.5217b52a.js.map",
-    "787.ade4cc30.chunk.js.map": "/gonzothedev.github.io/4-reactjs/notes-app/build/static/js/787.ade4cc30.chunk.js.map"
+    "main.css": "/4-reactjs/notes-app/build/index.html/static/css/main.534618d2.css",
+    "main.js": "/4-reactjs/notes-app/build/index.html/static/js/main.827cc066.js",
+    "static/js/787.ade4cc30.chunk.js": "/4-reactjs/notes-app/build/index.html/static/js/787.ade4cc30.chunk.js",
+    "index.html": "/4-reactjs/notes-app/build/index.html/index.html",
+    "main.534618d2.css.map": "/4-reactjs/notes-app/build/index.html/static/css/main.534618d2.css.map",
+    "main.827cc066.js.map": "/4-reactjs/notes-app/build/index.html/static/js/main.827cc066.js.map",
+    "787.ade4cc30.chunk.js.map": "/4-reactjs/notes-app/build/index.html/static/js/787.ade4cc30.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.534618d2.css",
-    "static/js/main.5217b52a.js"
+    "static/js/main.827cc066.js"
   ]
 }
